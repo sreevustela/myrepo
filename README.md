@@ -12,7 +12,28 @@ This section provides a clear summary of the actions taken in SAS to help review
 ### Step 1: File Upload and Workspace Setup
 - Uploaded all required input files (`grant_district_list.xlsx`, `district_staar_22-23.csv`, `All_districts_info_22-23.xlsx`) into the SAS Studio workspace directory: `/home/u64215192/sasuser.v94`
 - Defined macro variables for consistent file referencing and assigned a 'WORK' library `mylib`.
+## 📁 Folder Structure
+```
+📂 TEA_Grant_Impact_Analysis
+├── 📂 sas_scripts         # All SAS programs used for data ingestion, transformation, and export
+├── 📂 input_files         # Raw Excel and CSV files
+├── 📂 output_files        # Final Excel exports (TEA.xlsx)
+├── 📂 visuals             # Power BI screenshots of visualizations
+├── 📄 README.md           # This document
+```
 
+---
+
+## 📂 Data Sources
+| Source File                          | Description                                     |
+|-------------------------------------|-------------------------------------------------|
+| grant_district_list.xlsx            | List of 200 grant-funded districts              |
+| district_staar_22-23.csv            | STAAR math performance for SY 22–23             |
+| All_districts_info_22-23.xlsx       | Metadata about all Texas districts              |
+
+All files are stored in the SAS Studio directory: `/home/u64215192/sasuser.v94/`
+
+---
 ### Step 2: Load Input Files into SAS
 - Imported Excel and CSV data into corresponding SAS datasets in the `mylib` library.
 - Verified column names and formats using `proc contents` to ensure compatibility with transformations.
@@ -40,6 +61,8 @@ This section provides a clear summary of the actions taken in SAS to help review
 ### Step 7: Generate Final Dataset for Reporting
 - Created a final `district_scores` dataset with cleaned values, percentages, and band assignments.
 - This dataset was exported and used as the source file for Power BI dashboards.
+- `TEA.xlsx` → Power BI source
+- Sheet: `Extract`
 
 ### Step 8: Group-Level Comparisons and Ratings
 - Aggregated performance by grant vs. non-grant districts for SY 21–22 and 22–23.
@@ -105,3 +128,13 @@ Created separate pages for each insight requested:
 ### Step 6: Formatting and Sharing
 - Applied consistent color themes for performance bands.
 - Report is ready to be shared as `.pbix` or exported to PDF as needed.
+---
+
+## 📬 Contact
+**Developer:** Praveena Mudiyala 
+
+**Email:** praveena.vkshu@gmail.com 
+
+**Tools Used:** SAS Studio, Power BI, Excel
+
+---
